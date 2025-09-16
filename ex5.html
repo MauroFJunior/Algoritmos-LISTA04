@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="get_valor">Digite o valor da pizza.</label><br>
+    <input type="text" id="get_valor"><br><br>
+    <label for="get_amigos">Digite a quantidade de amigos.</label><br>
+    <input type="text" id="get_amigos"><br><br>
+    <button onclick="getPizza()">Rola pizza?</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function getPizza(){
+        var valor = Number(get_valor.value);        
+        var amigos = Number(get_amigos.value);
+        
+        var unitario = valor / amigos;
+
+        mensagem.innerHTML = `Cada amigo vai pagar R$${unitario} pela pizza!`;
+
+        if (unitario > 20){
+            mensagem.innerHTML = `Cada amigo vai pagar R$${unitario} pela pizza! <br> <span style="color: red; font-style: italic; font-weight: bold">Deu ruim! Pizza muito cara!</span>`;
+        }
+    }
+</script>

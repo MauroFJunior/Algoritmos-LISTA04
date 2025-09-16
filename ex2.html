@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="get_latinhas">Quantas latinhas de refrigerante você toma por dia?</label><br>
+    <input type="text" id="get_latinhas"><br><br>
+    <button onclick="getRefri()">Quantos refris?</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function getRefri(){
+        var latinhas = Number(get_latinhas.value);
+        var latinhasAno = latinhas * 365;
+
+        if (latinhasAno > 500) {
+            
+            mensagem.innerHTML = `Você consome ${latinhasAno} latinhas por ano.
+            <br>
+            Cuidado com a diabetes!`
+
+        } else {
+
+            mensagem.innerHTML = `Você consome ${latinhasAno} latinhas por ano.
+            <br>`
+
+        }
+
+
+    }
+</script>

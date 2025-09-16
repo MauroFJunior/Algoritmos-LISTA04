@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="get_nota1">Digite a nota 1</label><br>
+    <input type="text" id="get_nota1"><br><br>
+    <label for="get_nota2">Digite a nota 2</label><br>
+    <input type="text" id="get_nota2"><br><br>
+    <label for="get_nota3">Digite a nota 3</label><br>
+    <input type="text" id="get_nota3"><br><br>
+    <button onclick="getMedia()">Análisar desempenho</button><br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function getMedia(){
+        var nota1 = Number(get_nota1.value);        
+        var nota2 = Number(get_nota2.value);        
+        var nota3 = Number(get_nota3.value);
+        
+        var media = (nota1 + nota2 + nota3) / 3;
+
+        mensagem.innerHTML = `Sua média foi de ${media}. `;
+        
+        if (media > 9.4) {
+            mensagem.innerHTML = `Sua média foi de ${media}. 
+            <br>
+            Parabéns, foi é fora de série!`
+        }
+    }
+</script>
