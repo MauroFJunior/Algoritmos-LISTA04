@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="get_h">Digite quantos homens entraram no elevador.</label><br>
+    <input type="text" id="get_h"><br><br>
+    <label for="get_m">Digite quantas mulheres entraram no elevador.</label><br>
+    <input type="text" id="get_m"><br><br>
+    <button onclick="getAnalise()">Análisar peso.</button><br><br>
+
+    <div id="mensagem"></div>
+
+</body>
+</html>
+<script>
+    function getAnalise(){
+        var h = Number(get_h.value);
+        var m = Number(get_m.value);
+
+        var total = h*80 + m*60;
+
+        mensagem.innerHTML = `Este elevador suporta 800Kg e o peso estimado desta lotação é de ${total}Kg`;
+
+        if (total > 800) {
+            mensagem.innerHTML += `<span style="color: blue"><br>Será necessário que alguém desça para que o elevador se movimente.</span>`;
+        }
+    }
+</script>

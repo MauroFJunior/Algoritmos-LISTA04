@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="get_s">Digite qual a ultima SITCOM que assistiu.</label><br>
+    <input type="text" id="get_s"><br><br>
+    <label for="get_ep">Digite quantos episódios dela você assistiu.</label><br>
+    <input type="text" id="get_ep"><br><br>
+    <button onclick="getAnalise()">Verificar nível.</button><br><br>
+
+    <div id="mensagem"></div>
+
+</body>
+</html>
+<script>
+    function getAnalise(){
+        var ep = Number(get_ep.value);
+
+        var minutos = ep*22;
+        var horas = minutos / 60;
+
+        mensagem.innerHTML = `Vejo que você gosta da série ${get_s.value}`;
+
+        if (horas > 30) {
+            mensagem.innerHTML += `<br>Uau, você realmente gosta dessa série!`;
+        }
+    }
+</script>

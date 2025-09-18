@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="get_renda">Digite a sua renda familiar.</label><br>
+    <input type="text" id="get_renda"><br><br>
+    <label for="get_prest">Digite o valor da prestação.</label><br>
+    <input type="text" id="get_prest"><br><br>
+    <button onclick="getFinanciamento()">Calcular financiamento.</button><br><br>
+
+    <div id="mensagem"></div>
+</body>
+</html>
+
+<script>
+    function getFinanciamento(){
+        var renda = Number(get_renda.value);
+        var prest = Number(get_prest.value);
+
+        var financiamento = (prest / renda) * 100
+        
+        mensagem.innerHTML = `A prestação corresponde a ${financiamento.toFixed(2)}% da renda familiar`
+
+        if (financiamento > 30){
+            mensagem.innerHTML += `<br><span style="color: red; font-weight: bold">Será necessário completamentar a renda familiar.</span>`;
+        }
+    }
+</script>
+

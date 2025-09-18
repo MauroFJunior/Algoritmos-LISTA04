@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="get_f">Digite quantos filhos você tem.</label><br>
+    <input type="text" id="get_f"><br><br>
+    <button onclick="getAnalise()">Analisar família.</button><br><br>
+
+    <div id="mensagem"></div>
+
+</body>
+</html>
+<script>
+    function getAnalise(){
+        var filhos = Number(get_f.value);
+
+        mensagem.innerHTML = `Não tem TV.<br><br>`;
+        
+        if(filhos > 1) {
+
+            mensagem.innerHTML += `Não tem internet.<br><br>`;
+
+            if (filhos > 2) {
+
+                mensagem.innerHTML += `Não tem Video Game.<br><br>`;
+
+                if (filhos > 3) {
+
+                    mensagem.innerHTML += `Não tem Netflix.<br><br>`;
+
+                }
+
+            }
+        }
+    }
+</script>

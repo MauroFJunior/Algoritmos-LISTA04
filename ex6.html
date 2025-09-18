@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="get_quant">Digite a quantidade de KWh consumida no mês.</label><br>
+    <input type="text" id="get_quant"><br><br>
+    <button onclick="getConta()">Calcular conta de luz.</button>
+</body>
+</html>
+<script>
+    var precoKW = .85;
+    function getConta(){
+        var quant = Number(get_quant.value);
+        var total = quant * precoKW
+
+        if (quant < 100) {
+            total *= .9;
+        }
+
+        alert('valor a ser pago: ' + total);
+    }
+</script>

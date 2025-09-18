@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="get_n">Digite seu nome.</label><br>
+    <input type="text" id="get_n"><br><br>
+    <label for="get_i">Digite quantos anos tem.</label><br>
+    <input type="text" id="get_i"><br><br>
+    <button onclick="getAnalise()">Avaliar aluno.</button><br><br>
+
+    <div id="mensagem"></div>
+
+</body>
+</html>
+<script>
+    function getAnalise(){
+        var i = Number(get_i.value);
+
+        if (i >= 18) {
+            mensagem.innerHTML = `${get_n.value}, vamos tirar a CNH?`;
+        } else mensagem.innerHTML = `${get_n.value}, vai jogar PlayStation!`;
+    }
+</script>
