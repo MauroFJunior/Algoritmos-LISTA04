@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="get_n">Digite o número de chocolates a ser comprado.</label><br>
+    <input type="text" id="get_n"><br><br>
+    <button onclick="getAnalise()">Compra.</button>
+
+    <div id="mensagem"></div>
+
+</body>
+</html>
+<script>
+    function getAnalise(){
+        var num = Number(get_n.value);
+
+        if (num > 12) { // se num for impar, % 2 == 1 e 1 == TRUE.
+            mensagem.innerHTML = `O valor da sua compra foi de ${num * 2.5} reais.`;
+        } else {
+            mensagem.innerHTML = `O valor da sua compra foi de ${num * 3} reais.`;
+        }
+    }
+</script>
